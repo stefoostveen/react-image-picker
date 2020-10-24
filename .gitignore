@@ -59,3 +59,5 @@ typings/
 
 # demo
 demo/
+
+dist/*
