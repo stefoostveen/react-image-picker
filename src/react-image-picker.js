@@ -8,21 +8,16 @@ import Image from './components/image'
 class ImagePicker extends Component {
   constructor(props) {
     super(props)
-
-    console.log("propjes", this.props)
     let preSelected = this.props.selected ? this.props.selected : Map()
-
     this.state = {
       picked: preSelected
     }
 
-    console.log("picked", this.state.picked.toString())
     this.handleImageClick = this.handleImageClick.bind(this)
     this.renderImage = this.renderImage.bind(this)
   }
 
   handleImageClick(image) {
-    console.log("picked", this.state.picked.toString())
     const { multiple, onPick } = this.props
     const pickedImage = multiple ? this.state.picked : Map()
     const newerPickedImage = 
@@ -39,7 +34,6 @@ class ImagePicker extends Component {
   }
 
   renderImage(image, i) {
-    console.log("img: "+image.value,this.state.picked.has(image.value))
     return (
       <Image 
         src={image.src}
